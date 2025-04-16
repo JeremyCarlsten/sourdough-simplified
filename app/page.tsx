@@ -44,7 +44,11 @@ export default function Home() {
     const salt = totalFlour * 0.02;
     const levain = totalFlour * levainDecimal;
 
-    window.setRecipe({
+    window?.datafast("calculate_recipe", {
+      description: "The user calculated a recipe",
+    });
+    
+    setRecipe({
       flour: Math.round(totalFlour),
       water: Math.round(water),
       salt: Math.round(salt),
